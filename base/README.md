@@ -1,232 +1,122 @@
 # Javascript
-Javascaript 是交互性语言，是轻量级语言，`弱类型语言`。
->**弱类型语言：Javascaript 它可以很简单的给变量赋值各种数据类型，所以是弱类型语言。** <br>
-强类型语言： 不可以很简单的让变量转换成各种数据类型，称为强类型语言。比如 Java , c++ , Python
+本文章对 `Javascript` 做一个阶段性的终结。
 
-## 变量
-变量是用于存储信息的“容器”，变量的值可以在整个程序中被修改。
-```复制
-var student = 'peter'
-```
-在上面的例子，student 被赋值为 'peter'。
->注意：Javascript 中区分大小写。<Br>
-Peter 和 peter 是两个不同的变量。
+希望大家先对基础教程 `Javascript Junior Level` 了解一下再看这一篇文章。
+
+<a href="http://javascript-junior.biuxbiu.design/#/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="168" height="20"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="168" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path fill="#555" d="M0 0h135v20H0z"/><path fill="#97ca00" d="M135 0h33v20H135z"/><path fill="url(#b)" d="M0 0h168v20H0z"/></g><g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="110"> <text x="685" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="1250">Javascript Junior Level</text><text x="685" y="140" transform="scale(.1)" textLength="1250">Javascript Junior Level</text><text x="1505" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="230">Link</text><text x="1505" y="140" transform="scale(.1)" textLength="230">Link</text></g> </svg></a>
+
+## 数组
 
 
-## 数据类型
-五种简单的数据类型：`数字 number`,`字符串 string`,`布尔 boolean`,`空 null`,`未定义 undefined`，<Br>一种复杂的数据类型：`对象 object`。
+#### 数组创建
 
-
-#### 数字 number
-数据类型，可以带小数点，也可以不带。
+* 空数组
 ```copy
-var x = 34.00;      //有小数点
-var x = 34;         //没有小数点
+var Obj = new Array();
 ```
-极大极小都可以通过科学技术方体现。
+
+* 指定数组长度（个数）
 ```copy
-var y = 123e5;      //123*10的五次方 12300000
-var y = 123e-5;     //123除以10的五次方 0.00123
+var Obj = new Array(5);
 ```
 
-#### 字符串 string
-字符串是存储字符的变量，字符串是引号中的任意文本。
-可以使用`单引号`或者`双引号`
+* 指定元素数组
 ```copy
-var name = 'peter';     //使用单引号
-var name = "peter";     //使用双引号
+var Obj = new Array('a','b','c'...,'z');
 ```
-单引号里面可以有双引号，双引号里面可以有单引号。
+
+* 单维数组（也称为数组的字面量）
 ```copy
-var name = 'He is "peter"'      //He is "peter"
-var name = "He is 'peter'"      //He is 'peter'
+var Obj = ['a','b','c'...,'z'];
 ```
-单（双）引号里面有单（双）引号需要转义。
+
+* 多维数组
 ```copy
-var name = 'He is \'peter\''        //He is 'peter'
+var Obj = (['a','b','c'],['1','2','3'],['a1','b2','c3']);
 ```
 
-其它的转义情况
+#### 数组操作
 
-| 代码 | 输出 |
-|:---:|:---:|
-|\'|单引号|
-|\"|双引号|
-|\\|斜杠|
-|\n|换行|
-|\r|回车|
-|\t|tab（制表符）|
-|\b|推格符|
-|\b|换页符|
-
-#### 布尔 boolean
-布尔类型只能有两个值，`true` 和 `false`。
+###### 存取数组元素
+* 单维数组获取元素：`数组名[元素下标索引]`
 ```copy
-var x = true;
-var y = false;
+var theFirstLetter = Obj[0];        //获取第一个元素
 ```
->0,null,undefined,空字符串的时候，布尔值为 `false`。任何有值的字符串都为 `true`。<Br>
-`空字符串`也表示有值，为 `true`。
 
-
-## 算数运算符
-算数运算符对数字或者文字或者变量执行算术运算。
-
-| 交易所 | 货币类型 | 货币类型 |
-| -------- | -------- | -------- |
-| + | 加法 | y = x + 2 |
-| - | 减法 | y = x - 2 |
-| * | 乘法 | y = x * 2 |
-| / | 乘法 | y = x / 2 |
-| % | 取余 | y = x % 2 |
-| ++ | 自增 | y = x++ |
-| -- | 自减 | y = x-- |
-
-
-#### 数字与其他类型中的运算
-* 数字类型中，加法表示两个数的和。
+* 多维数组获取元素：`数组名[数组小标索引][元素下标索引]`
 ```copy
-var num = 2 + 3;        //5    =>  算术运算
+var theFirstGroupFirstLetter = Obj[0][1];     //获取第一组数组的第二个元素
 ```
-* 数字与`变量`相加，为算数运算。
+
+* 新增数组元素：使用 `[]` 新增一个数组元素。
 ```copy
-var x = 10;     //变量
-var num = x + 2 + 3;        //15    =>  算术运算
+Obj[4] = '5';
 ```
-* 数字与`字符串`相加为`拼接`效果，输出`字符串`。
+
+* 删除数组元素：`delete`
 ```copy
-var num = 1 + '10' ;     //'110'     =>  字符串拼接
+delete Obj[4];
 ```
-* 数字与`字符串`相减为算数运算，输出数字。
+
+* 关联数组：当下标为 `非数值` 的时候，生成关联数组，下标作为对象的属性名字。
 ```copy
-var x = '10';        //字符串
-var num = 1 - x;     //-9   =>  算术运算
+Obj['letter'] = 'hello world';
 ```
-* 数字与`undefined`相加输出 `NaN`。
+
+* 数组添加到对象当中
 ```copy
-var num = 1 + undefined;     //NaN  =>  算术运算
+var Obj = {};
+var ObjArray = ['1','2','3'];
+for(var i = 0; i <= ObjArray.length; i++){
+    Obj[i] = ObjArray[i];
+}
+console.log(Obj);
 ```
-* 数字与`字符串的 undefined`相加为`拼接`。
+
+>还有另一个小技巧，后续我们会讨论 `push` 和 `apply` 的用法。
 ```copy
-var num = 10 + 'undefined'       //'10undefined'    =>  字符串拼接
+var Obj = {};
+var ObjArray = ['1','2','3'];
+[].push.apply(Obj,ObjArray);
+console.log(Obj);
 ```
-* 数字与`null`相加减为算数运算。
+
+* 遍历数组
 ```copy
-var num = 10 + null;       //10 null => 0（数字运算）
-var num = 10 - null;       //10 null => 0（数字运算）
+var Obj = ['1','2','3'];
+for(var i = 0;i <= Obj.length; i++){
+    console.log(Obj[i]);
+}
 ```
 
-#### 字符串与其他数据类型之间的运算
-* 字符串与`undefined`相加减，要注意`+`和`-`的输出结果不一样。
+#### 数组属性
+
+* constructor：`返回对象的构造函数`
 ```copy
-var num  = '123' + undefined;       //'123undefined'    =>  字符串拼接
-var num  = '123' - undefined;       //NaN   =>  数字运算
+var Obj = ['1','2'];
+console.log(Obj.constructor);       //返回数组对象的构造函数
 ```
-* 字符串与`null`相加减
+
+>构造函数对象的 `constructor` 也返回构造函数。
 ```copy
-var num = '123' + null;     //'123null' =>  字符串拼接
-var num = '123' - null;     //123   =>  算术运算
+function con(){
+    console.log('1')
+}
+var dataOne = new con();
+var dataTwo = new con();
+dataOne.constructor;        //返回对象的构造函数
+dataTwo.constructor;        //返回对象的构造函数
+结果
+//ƒ con(){
+    console.log('1')
+}//
 ```
-* 字符串与`boolean`相加减
+
+
+* length：`返回数组的长度`
 ```copy
-var num = '123' + false;     //'123false' =>  字符串拼接
-var num = '123' - false;     //123   =>  算术运算
-var num = '123' + true;     //'123true' =>  字符串拼接
-var num = '123' - true;     //122   =>  算术运算
+var Obj = ['1','2','3'];
+console.log(Obj.length)
 ```
 
-
-#### null与其他数据类型之间的运算
-* null与`undefined`相加减。
-```copy
-var num = null + undefined;       //NaN   =>  算术运算
-var num = null - undefined;       //NaN   =>  算术运算
-```
-* null与`boolean`相加减。
-```copy
-var num = null + false;       //0  =>  算术运算
-var num = null - false;       //0   =>  算术运算
-var num = null + true;       //1    =>  算术运算
-var num = null - true;       //-1   =>  算术运算
-```
-
-#### undefined与其他数据类型之间的运算
-* undefined与`boolean`相加减。
-```copy
-var num = undefined + false;        //NaN   =>  算术运算
-var num = undefined - false;        //NaN   =>  算术运算
-var num = undefined + true;        //NaN   =>  算术运算
-var num = undefined - true;        //NaN   =>  算术运算
-```
-
-#### 自增与自减
-
-|方法|说明|代码|解析|
-|:---:|:---:|:---:|:---:|
-|++|自增一|x=y++|会先输出 y 再自增|
-|++|自增一|x=++y|先自增在输出 y|
-|--|自减一|x=y--|会先输出 y 再自减|
-|--|自减一|x=--y|先自减在输出 y|
-
-
-## 比较运算符
-在逻辑语句中使用比较运算符来比较两个`变量`或两个`值`之间的大小，结果返回 `true` 和 `false`。
-
-假如 `var x = 0`;
-
-|运算符|描述|比较|返回值|
-|:---:|:---:|:---:|:---:|
-|==|等于|x=='0'|true|
-|==|等于|x==1|false|
-|===|全等于|x===0|true|
-|===|全等于|x==='0'|false|
-|!=|不等于|x!=1|true|
-|!=|不等于|x!=0|false|
-|!==|不全等于|x!=='0'|true|
-|!==|不全等于|x!==0|false|
-|<|小于|x<0|true|
-|>|大于|x>0|false|
-|>=|大于等于|x>=0|true|
-|>=|大于等于|x>='0'|true|
-|<=|小于等于|x<=0|true|
-|<=|小于等于|x<='0'|true|
-
->`==` 、 `!=` 比较的是两个 `值` 是否相等。<br>
-`===` 、 `!==` 比较的是两个 `值和数据类型` 是否相等。
-
-## 逻辑运算符
-逻辑运算符，也称为`布尔运算符`，因为它比较后会输出`true`或者`false`。
-
-假如`var x = 5`,`var y = 10`
-
-|运算符|描述|比较|返回值|
-|:---:|:---:|:---:|:---:|
-|&&|并且|x>5&&y>=10|true|
-|\|\||或者|x>5||y>=10|true|
-|!|或者|取反||!(x>y)|true|
-
-#### 三元运算
-
-```copy
-condition ? functionOne() : functionTwo();
-```
-`condition` 判断条件是否成立，成立返回`true`,不成立返回`false`<Br>
-`true`执行`functionOne()`<Br>
-`false`执行`functionTwo()`
-
-引用逻辑运算符的例子我们可以写出三元运算如下
-```copy
-x>y ? console.log('true') : console.log('false');
-```
-如果 x>y 条件成立(condition)，返回`true`执行`console.log('true')`<Br>
-如果 x>y 条件不成立(condition)，返回`false`执行`console.log('false')`
-
-
-## 字符串运算符
-实则为两个字符串拼接。
-
-```copy
-var firstName = 'biu'; 
-var lastName = 'chan'; 
-var student = firstName + lastName;     //两个字符串相加为拼接
-```
+* prototype：`通过增加属性和方法扩展数组定义`

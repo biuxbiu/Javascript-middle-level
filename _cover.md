@@ -1,10 +1,10 @@
 <!-- ![logo](_media/icon.svg) -->
 
-# Javascript Junior Level
+# Javascript Middle Level
 
-> 一个既简单又便于理解的 Javascript 文档
+> 基于 Javascript Junior Level 的知识总结
 
-* 1小时理解 Javascript 基本知识
+* 1小时巩固 Javascript 基本知识
 
 [GitHub](#)
 [Get Started](/base/#javascript)
