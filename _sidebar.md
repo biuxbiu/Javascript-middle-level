@@ -8,11 +8,16 @@
 
 
 
+<div class="MoreWay">biuxbiu Javascript Series</div>
+
+<a class="developerLogo" href="http://javascript-junior.biuxbiu.design/" target="_blank"><img src="img/javascript-junior-level.png"></a>
 
 <div class="MoreWay">More Learning Pathway</div>
 
-
 <a class="developerLogo" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript" target="_blank"><img src="https://developer.mozilla.org/static/img/web-docs-sprite.22a6a085cf14.svg"></a>
+
+
+<a class="developerLogo" href="https://www.javascript.com/" target="_blank"><img src="img/js-logo.png"></a>
 
 
 <div class="MoreWay">Good FrontEnd Framework</div>
