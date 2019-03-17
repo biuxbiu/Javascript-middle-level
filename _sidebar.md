@@ -1,5 +1,8 @@
 <!-- <img class="logo" src="img/logo.png" /> -->
 
+<div class="sideBarTitle">Javascript Middle Level</div>
+
+
 * [数组 ](base/#Javascript)
     * [- 数组创建](base/#数组创建)
         * [- 空数组](base/#空数组)

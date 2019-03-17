@@ -1052,3 +1052,11 @@ pre:after {
 .pagination-item-title.pagination-item-title{
     margin-top:10px;
 }
+
+.sideBarTitle {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 40px;
+    line-height: 1;
+    margin-bottom: 10px;
+}
